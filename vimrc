@@ -574,7 +574,7 @@ if has('conceal')
 endif
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/pack/plugins/start/vim-snippets/snippets'
 
 " which disables all runtime snippets
 let g:neosnippet#disable_runtime_snippets = {

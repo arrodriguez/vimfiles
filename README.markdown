@@ -178,5 +178,5 @@ Credits
 
 * Original project and most of the heavy lifting: @scrooloose
 * The cool plugins for Rails, Cucumber and more: @timpope
-* All the other modules I use that can be seen on .gitmodules or bundle dir
+* All the other modules I use that can be seen on .gitmodules or pack/plugins/start dir
 * Hacks and some snippets: @carlosedp
