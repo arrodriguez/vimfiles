@@ -1,5 +1,4 @@
 filetype off
-call pathogen#infect()
 
 "" Use Vim settings, rather then Vi settings (much better!).
 "" This must be first, because it changes other options as a side effect.
@@ -199,6 +198,15 @@ function! MakeSession()
     exe "mksession! " . b:sessionfile
 
 endfunction
+
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
 
 " Updates a session, BUT ONLY IF IT ALREADY EXISTS
 function! UpdateSession()
@@ -574,7 +582,7 @@ if has('conceal')
 endif
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/pack/plugins/start/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " which disables all runtime snippets
 let g:neosnippet#disable_runtime_snippets = {
@@ -591,6 +599,9 @@ let g:go_highlight_build_constraints = 1
 let g:go_auto_sameids = 1
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap gi <Plug>(go-info)
+
+" vim-rust settings
+let g:rustfmt_autosave = 1
 
 set completeopt=menu,menuone
 
