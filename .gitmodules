@@ -121,3 +121,6 @@
 [submodule "pack/plugins/start/rust.vim"]
 	path = pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "pack/plugins/start/bclose.vim"]
+	path = pack/plugins/start/bclose.vim
+	url = https://github.com/rbgrouleff/bclose.vim.git
